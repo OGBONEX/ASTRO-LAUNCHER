@@ -1,0 +1,25 @@
+ASTRO LAUNCHER LOGO / ICON
+
+Use app-icon-source.png as the source icon in the Tauri project.
+
+From the Astro Launcher project root:
+
+npm run tauri icon src-tauri/app-icon-source.png
+
+This generates the Tauri desktop icon set in src-tauri/icons/.
+
+Then ensure src-tauri/tauri.conf.json uses:
+
+"icon": [
+  "icons/32x32.png",
+  "icons/64x64.png",
+  "icons/128x128.png",
+  "icons/128x128@2x.png",
+  "icons/icon.png",
+  "icons/icon.ico",
+  "icons/icon.icns"
+]
+
+For the Windows installer, the NSIS installer icon is:
+
+"installerIcon": "icons/icon.ico"

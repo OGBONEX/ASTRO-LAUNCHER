@@ -1,1 +1,95 @@
-{"$schema":"https://schema.tauri.app/config/2","productName":"Astro Launcher","version":"0.2.0","identifier":"com.astro.launcher","build":{"frontendDist":"../dist","devUrl":"http://localhost:1420"},"app":{"windows":[{"title":"Astro Launcher","width":1280,"height":800,"minWidth":980,"minHeight":650,"resizable":true}],"security":{"csp":null}},"bundle":{"active":true,"targets":"all"}}
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Astro Launcher",
+  "version": "0.7.0",
+  "identifier": "com.astro.launcher",
+
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+
+  "app": {
+    "withGlobalTauri": false,
+
+    "windows": [
+      {
+        "label": "main",
+        "title": "Astro Launcher",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 1000,
+        "minHeight": 650,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true,
+        "transparent": false,
+        "decorations": true
+      }
+    ],
+
+    "security": {
+      "csp": null
+    }
+  },
+
+  "bundle": {
+    "active": true,
+
+    "category": "Game",
+
+    "shortDescription": "Astro Launcher - Minecraft launcher",
+    "longDescription": "Astro Launcher is a modern Minecraft launcher for managing Minecraft versions, instances, loaders, Java runtimes and launcher content.",
+    "publisher": "Astro Launcher",
+
+    "copyright": "Copyright © 2026 Astro Launcher",
+
+    "targets": [
+      "nsis",
+      "msi",
+      "deb",
+      "rpm",
+      "appimage"
+    ],
+
+    "icon": [
+      "icons/32x32.png",
+      "icons/64x64.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.png",
+      "icons/icon.ico",
+      "icons/icon.icns"
+    ],
+
+    "windows": {
+      "allowDowngrades": true,
+      "bundleVCRuntime": false,
+
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": false,
+        "languages": [
+          "English"
+        ],
+        "compression": "lzma",
+        "startMenuFolder": "Astro Launcher",
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico"
+      }
+    },
+
+    "linux": {
+      "appimage": {
+        "bundleMediaFramework": false
+      }
+    }
+  }
+}
