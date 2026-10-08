@@ -1,0 +1,25 @@
+[package]
+name="astro-launcher"
+version="0.7.0"
+description="Astro Launcher"
+edition="2021"
+[lib]
+name="astro_launcher_lib"
+crate-type= ["staticlib", "cdylib", "rlib"]
+[build-dependencies]
+tauri-build= {version="2", features = [] }
+[dependencies]
+tauri= {version="2",features= [] }
+tauri-plugin-dialog="2"
+serde= {version="1",features= ["derive"] }
+serde_json="1"
+tokio= {version="1",features= ["fs", "process", "io-util"] }
+reqwest= {version="0.12",default-features=false,features= ["json", "stream", "rustls-tls"] }
+sha1="0.10"
+zip="2"
+dirs="6"
+uuid= {version="1",features= ["v4", "serde"] }
+
+sha2="0.10"
+md-5="0.10"
+regex="1"
